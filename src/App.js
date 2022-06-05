@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
+import SkinList from './pages/SkinList';
+import Testimonials from './pages/Testimonials';
+import Cart from './pages/Cart';
+import Footer from './components/Footer';
 
 function App() {
+
+  const URL = 'https://olive-skin.herokuapp.com/';
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path="/list" element={<SkinList />} />
+      <Route path="/testimonials" element={<Testimonials />} />
+      <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
