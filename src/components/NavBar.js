@@ -24,6 +24,9 @@ function NavBar(props) {
         <Link to="/testimonials">
           <div>TESTIMONIALS</div>
         </Link>
+        <Link to="/cart">
+          <div>CART</div>
+        </Link>
       </nav>
     </header>
   );
