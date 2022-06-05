@@ -4,7 +4,7 @@ function SkinList(props) {
 
   const [products, setProducts] = useState(null);
 
-  const getProjectsData = async () => {
+  const getProductsData = async () => {
 
     const response = await fetch(props.URL + "products");
 
