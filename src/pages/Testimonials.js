@@ -1,28 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function Testimonials(props) {
-  const [testimonials, setTestimonials] = useState(null);
+    const [testimonials, setTestimonials] = useState(null);
 
-  const getTestimonialData = async () => {
+    useEffect(() => {
+        const getTestimonialsData = async () => {
+            const response = await fetch(props.URL + "testimonials");
+            const data = await response.json();
+            setTestimonials(data);
+        };
+        getTestimonialsData();
+    }, [props.URL]);
 
-    const response = await fetch(props.URL + "testimonials");
-
-    const data = await response.json();
-
-    setTestimonials(data);
-  };
-
-  useEffect(() => getTestimonialData(), []);
-
-  const loaded = () => (
-    <div>
-      <h2>{testimonials.name}</h2>
-      <h3>{testimonials.headshot}</h3>
-      <p>{testimonials.bio}</p>
-    </div>
-  );
-
-  return testimonials ? loaded() : <h1>Loading...</h1>;
-}
+    const loaded = () => {
+        return testimonials.map((testimonials) => (
+            <div>
+                <h1>{testimonials.name}</h1>
+                <img src={testimonials.img} alt='testimonials' />
+            </div>
+        ));
+    };
+    return testimonials ? loaded() : <h1>Loading...</h1>;
+};
 
 export default Testimonials;

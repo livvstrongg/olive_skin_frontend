@@ -9,16 +9,16 @@ import Cart from './pages/Cart';
 import Footer from './components/Footer';
 
 function App() {
+  const URL = "https://olive-skin.herokuapp.com/";
 
-  const URL = 'https://olive-skin.herokuapp.com/';
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path="/list" element={<SkinList />} />
-      <Route path="/testimonials" element={<Testimonials />} />
-      <Route path="/cart" element={<Cart />} />
+        <Route exact path='/' element={<Home />} />
+        <Route path='/products' element={<SkinList URL={URL} />} />
+        <Route path='/testimonials' element={<Testimonials URL={URL} />} />
+        <Route path='/cart' element={<Cart URL={URL} />} />
       </Routes>
       <Footer />
     </div>
