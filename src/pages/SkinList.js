@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import {useState, useEffect} from 'react';
+
 
 function SkinList(props) {
     const [products, setProducts] = useState(null);
@@ -16,7 +18,9 @@ function SkinList(props) {
         return products.map((product) => (
             <div>
                 <h1>{product.name}</h1>
-                <img src={product.image} alt='product' />
+                <Link to="/products/:id">
+                  <img src={product.image} alt='product' />
+                </Link>
             </div>
         ));
     };

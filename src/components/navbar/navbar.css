@@ -1,0 +1,14 @@
+.link{
+    color: rgb(184, 173, 173);
+    text-decoration: none;
+}
+.link:hover{
+    color: white;
+}
+.Logo{
+    height: 45px;
+    width: 45px;
+    border-radius: 55px;
+   
+} 
+

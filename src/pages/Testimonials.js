@@ -16,7 +16,8 @@ function Testimonials(props) {
         return testimonials.map((testimonials) => (
             <div>
                 <h1>{testimonials.name}</h1>
-                <img src={testimonials.img} alt='testimonials' />
+                <img src={testimonials.image} alt='testimonials' />
+                <h4>{testimonials.bio}</h4>
             </div>
         ));
     };

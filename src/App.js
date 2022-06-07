@@ -1,7 +1,8 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import Navigation from './components/navbar/NavBar';
 import Home from './pages/Home';
 import SkinList from './pages/SkinList';
 import Testimonials from './pages/Testimonials';
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <Navigation />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/products' element={<SkinList URL={URL} />} />
