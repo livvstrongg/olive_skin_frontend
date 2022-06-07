@@ -24,6 +24,9 @@ function Navigation(){
       <Nav.Link  className="testimonials">
       <Link  to="/testimonials">Testimonials</Link>
       </Nav.Link>
+      <Nav.Link  className="cart">
+      <Link  to="/cart">Cart</Link>
+      </Nav.Link>
     </Nav>
     </Container>
   </Navbar>    

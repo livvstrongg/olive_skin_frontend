@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 function SkinList(props) {
@@ -14,17 +14,24 @@ function SkinList(props) {
         getProductsData();
     }, [props.URL]);
 
+
     const loaded = () => {
         return products.map((product) => (
             <div>
-                <h1>{product.name}</h1>
-                <Link to="/products/:id">
-                  <img src={product.image} alt='product' />
-                </Link>
+              <Link to="/products/:id">
+                <h3>{product.name}</h3>
+              </Link>
+              <Link to="/products/:id">
+                <img src={product.image} alt='product' width={250} height={250}/>
+              </Link>
             </div>
+        
         ));
     };
     return products ? loaded() : <h1>Loading...</h1>;
 };
 
+
+
 export default SkinList;
+

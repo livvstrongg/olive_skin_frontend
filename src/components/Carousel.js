@@ -7,13 +7,10 @@ function ImageCarousel() {
         <div className="carousel-wrapper">
             <Carousel>
                 <div>
-                    <img src="https://i.imgur.com/z4XgngS.png" />
+                    <img src="https://i.imgur.com/GdehnLJ.png" />
                 </div>
                 <div>
-                    <img src="https://i.imgur.com/OwsyDZi.png" />
-                </div>
-                <div>
-                    <img src="https://i.imgur.com/BkPaJmm.png" />
+                    <img src="https://i.imgur.com/bnnvmDV.png" />
                 </div>
             </Carousel>
         </div>

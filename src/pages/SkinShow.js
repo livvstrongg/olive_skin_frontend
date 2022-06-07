@@ -1,19 +1,32 @@
-import { useParams } from 'react-router-dom'
+import {useState, useEffect} from 'react';
+import { useParams, Route} from 'react-router-dom';
 
 function SkinShow(props) {
-  console.log(props)
-  const { id } = useParams()
-  const product = props.products
-  const products = products.find(p => p._id === id)
+  const [products, setProducts] = useState(null);
 
-  return (
-      <div className="product">
-        <h1>Show Page</h1>
-          <h2>{products.name}</h2>
-          <h2>{products.price}</h2>
-          <img src={products.image} alt={products.name} />
-      </div>
-  )
-}
+
+  useEffect(() => {
+      const getProductsData = async () => {
+          const response = await fetch(props.URL + "products");
+          const data = await response.json();
+          setProducts(data);
+      };
+      getProductsData();
+  }, [props.URL]);
+
+
+  const loaded = () => {
+      return products.map((product) => (
+          <div>
+            <h1>{product.name}</h1>
+            <img src={product.image} alt='product' /> 
+
+          </div>
+      ));
+  };
+  return products ? loaded() : <h1>Loading...</h1>;
+};
+
 
 export default SkinShow
+
