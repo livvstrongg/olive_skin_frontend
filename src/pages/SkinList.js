@@ -9,19 +9,24 @@ function SkinList(props) {
         const getProductsData = async () => {
             const response = await fetch(props.URL + "products");
             const data = await response.json();
+            console.log(data);
             setProducts(data);
+            
         };
+
+
         getProductsData();
+        
     }, [props.URL]);
 
 
     const loaded = () => {
         return products.map((product) => (
             <div>
-              <Link to="/products/:id">
+              <Link to={`/products/${product.id}`}>
                 <h3>{product.name}</h3>
               </Link>
-              <Link to="/products/:id">
+              <Link to={`/products/${product.id}`}>
                 <img src={product.image} alt='product' width={250} height={250}/>
               </Link>
             </div>
@@ -30,7 +35,6 @@ function SkinList(props) {
     };
     return products ? loaded() : <h1>Loading...</h1>;
 };
-
 
 
 export default SkinList;
