@@ -19,7 +19,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route path='/products' element={<SkinList URL={URL} />} />
+        <Route path='/product' element={<SkinList URL={URL} />} />
         <Route path='/products/:id' element={<SkinShow URL={URL} />} />
         <Route path='/testimonials' element={<Testimonials URL={URL} />} />
         <Route path='/cart' element={<Cart URL={URL} />} />

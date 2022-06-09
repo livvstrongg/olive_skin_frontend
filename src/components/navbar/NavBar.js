@@ -19,7 +19,7 @@ function Navigation(){
       <Link  to="/">Home</Link>
       </Nav.Link>
       <Nav.Link  className="products">
-      <Link  to="/products">Products</Link>
+      <Link  to="/product">Products</Link>
       </Nav.Link>
       <Nav.Link  className="testimonials">
       <Link  to="/testimonials">Testimonials</Link>
