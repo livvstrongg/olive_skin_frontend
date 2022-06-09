@@ -17,7 +17,7 @@ function Testimonials(props) {
             <div>
                 <h1>{testimonials.name}</h1>
                 <img src={testimonials.image} alt='testimonials' />
-                <h4>{testimonials.bio}</h4>
+                <h4>{testimonials.testimony}</h4>
             </div>
         ));
     };

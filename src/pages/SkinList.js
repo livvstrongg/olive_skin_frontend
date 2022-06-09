@@ -1,27 +1,20 @@
 import { useState, useEffect } from 'react';
+import { Link} from "react-router-dom";
 
 function SkinList(props) {
-    const [products, setProducts] = useState(null);
-
-    useEffect(() => {
-        const getProductsData = async () => {
-            const response = await fetch(props.URL + "product");
-            const data = await response.json();
-            setProducts(data);
-        };
-        getProductsData();
-    }, [props.URL]);
-
     const loaded = () => {
-        return products.map((products) => (
-            <div>
-                <h1>{products.name}</h1>
-                <img src={products.image} alt='testimonials' />
-                <h4>{products.bio}</h4>
+        return props.products.map((product) => (
+            <div onClick={()=> props.specificProduct(product)}>
+              <Link to={`/product/${product._id}`}>
+                <h1>{product.name}</h1>
+              </Link>
+                <img src={product.image} alt='product' />
             </div>
         ));
     };
-    return products ? loaded() : <h1>Loading...</h1>;
+    return props.products ? loaded() : <h1>Loading...</h1>;
+
+    
 };
 
 export default SkinList;
