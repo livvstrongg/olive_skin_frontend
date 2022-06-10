@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Skeleton from 'react-loading-skeleton';
-import { Link } from 'react-router-dom';
 
-function Products() {
+function Testimonials() {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
@@ -11,7 +10,7 @@ function Products() {
     useEffect(() => {
         const getProducts = async () => {
             setLoading(true);
-            const response = await fetch("https://olive-skin.herokuapp.com/product")
+            const response = await fetch("https://olive-skin.herokuapp.com/testimonials")
             if(componentMounted) {
                 setData(await response.clone().json());
                 setFilter(await response.json());
@@ -56,9 +55,8 @@ function Products() {
                     <div class="card-body">
                         <h5 class="card-title ">{product.name.substring(0,12)}</h5>
                         <p class="card-text lead fw-italic">
-                            ${product.price}
+                            {product.testimony}
                         </p>
-                        <Link to={`/products/${product._id}`} class="btn btn-outline-dark">Buy Now</Link>
                     </div>
                 </div>
                 </div>
@@ -74,7 +72,7 @@ function Products() {
         <div class="container my-5 py-5">
             <div className="row">
                 <div className="col-12 mb-5">
-                    <h1 className="display-6 fw-bolder text-center">Products</h1>
+                    <h1 className="display-6 fw-bolder text-center">Testimonials</h1>
                 </div>
             </div>
             <div className="row justify-content-center">
@@ -85,4 +83,4 @@ function Products() {
   )
 }
 
-export default Products
+export default Testimonials
