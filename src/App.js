@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Products from './components/Products';
-// import Product from './components/Product';
+import Product from './components/Product';
 import Testimonials from './components/Testimonials';
 import {Routes, Route} from 'react-router-dom';
 
@@ -13,7 +13,7 @@ function App() {
     <Routes>
     <Route exact path='/' element={<Home />} />
     <Route exact path='/products' element={<Products />} />
-    {/* <Route exact path='/products/:id' element={<Product />} /> */}
+    <Route exact path='/products/:id' element={<Product />} /> 
     <Route exact path='/testimonials' element={<Testimonials />} /> 
     </Routes>
     </>
