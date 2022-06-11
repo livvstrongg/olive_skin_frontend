@@ -25,9 +25,9 @@ function Navbar() {
                     </li>
                 </ul>
             <div className="buttons">
-                <Link to='/cart' className="btn btn-outline-dark ">
+                {/* <Link to='/cart' className="btn btn-outline-dark ">
                 <i className="fa fa-shopping-cart me-1 ms-2"></i>Cart
-                </Link>
+                </Link> */}
                
             </div>
         </div>
