@@ -1,37 +1,40 @@
 import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-function Review(props) {
+function Show(props) {
   console.log(props)
   const navigate = useNavigate()
   const { id } = useParams()
-  const testimony = props.testimonials
-  const testimonials = testimonials.find(p => p._id === id)
+  const testimonials = props.testimonials
+  const testimonial = testimonials.find(testimonial => testimonial._id === id)
   
 
-  const [editForm, setEditForm] = useState(testimony)
+  const [editForm, setEditForm] = useState(testimonial)
 
+  // handleChange function for form
   const handleChange = event => {
       setEditForm({ ...editForm, [event.target.name]: event.target.value })
   }
 
+  // handlesubmit for form
   const handleSubmit = event => {
       event.preventDefault()
-      props.updateReview(editForm, id)
+      props.updateTestimonials(editForm, id)
+      // redirect people back to index
       navigate(`/`)
   }
 
-  const removeReview = () => {
-    props.deletePeople(id)
+  const removeTestimonial = () => {
+    props.deleteTestimonials(id)
     navigate("/")
   }
 
   return (
-      <div className="reviews">
-          <h1>{testimony.name}</h1>
-          <h2>{testimony.title}</h2>
-          <img src={testimony.image} alt={testimony.name} />
-          <button id="delete" onClick={removeReview}>
+      <div className="person">
+          <h1>{testimonial.name}</h1>
+          <h2>{testimonial.testimony}</h2>
+          <img src={testimonial.image} alt={testimonial.name} />
+          <button id="delete" onClick={removeTestimonial}>
             DELETE
           </button>
           <form onSubmit={handleSubmit}>
@@ -51,15 +54,15 @@ function Review(props) {
               />
               <input
                   type="text"
-                  value={editForm.title}
+                  value={editForm.testimony}
                   name="title"
                   placeholder="title"
                   onChange={handleChange}
               />
-              <input type="submit" value="Update Review" />
+              <input type="submit" value="Update Person" />
           </form>
       </div>
   ) 
 }
 
-export default Review
+export default Show

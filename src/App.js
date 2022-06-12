@@ -4,8 +4,9 @@ import Home from './components/Home';
 import Products from './components/Products';
 import Product from './components/Product';
 import Testimonials from './components/Testimonials';
-import Review from './components/Review';
 import {Routes, Route} from 'react-router-dom';
+import Reviews from './components/Reviews';
+import Show from './pages/Show';
 
 function App() {
   return (
@@ -16,7 +17,15 @@ function App() {
     <Route exact path='/products' element={<Products />} />
     <Route exact path='/products/:id' element={<Product />} /> 
     <Route exact path='/testimonials' element={<Testimonials />} /> 
-    <Route exact path='/reviews' element={<Review />} /> 
+    <Route exact path='/reviews' element={<Reviews />} />  
+    <Route
+                    path="/reviews/:id"
+                    render={(rp) => (
+                        <Show
+                        {...rp}
+                        />
+                    )}
+    />
     </Routes>
     </>
   );
