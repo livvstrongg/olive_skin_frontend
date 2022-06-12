@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import '../App.css'
 
 function Review(props) {
   // state to hold formData
@@ -60,7 +61,7 @@ function Review(props) {
       <h1 className="display-6 fw-bolder text-center">Reviews</h1>
       {props.testimonials ? loaded() : loading()}
       <form onSubmit={handleSubmit}>
-      <h3 className="display-6 fw-bolder text-center">Leave a review</h3>
+      <h3 className="display-6 my-5 fw-bolder text-center">Leave a review</h3>
         <input
           type="text"
           class='form-control'
@@ -88,7 +89,7 @@ function Review(props) {
           placeholder="title"
           onChange={handleChange}
         />
-        <input type="submit" value="Post Review" />
+        <input className='justify-content:center my-5' type="submit" value="Post Review" />
       </form>
       </div>
       </div>
