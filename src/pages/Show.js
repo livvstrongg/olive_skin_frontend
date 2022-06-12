@@ -2,16 +2,14 @@ import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function Show(props) {
-  console.log(props)
   const navigate = useNavigate()
   const { id } = useParams()
   const testimonials = props.testimonials
-  const testimonial = testimonials.find(testimonial => testimonial._id === id)
+  const testimonial = testimonials.find(testimonials => testimonials._id === id)
+  console.log(id) 
   
-
   const [editForm, setEditForm] = useState(testimonial)
 
-  // handleChange function for form
   const handleChange = event => {
       setEditForm({ ...editForm, [event.target.name]: event.target.value })
   }
@@ -20,20 +18,19 @@ function Show(props) {
   const handleSubmit = event => {
       event.preventDefault()
       props.updateTestimonials(editForm, id)
-      // redirect people back to index
-      navigate(`/`)
+      navigate(`/reviews`)
   }
 
   const removeTestimonial = () => {
     props.deleteTestimonials(id)
-    navigate("/")
+    navigate("/reviews")
   }
 
   return (
       <div className="person">
-          <h1>{testimonial.name}</h1>
-          <h2>{testimonial.testimony}</h2>
-          <img src={testimonial.image} alt={testimonial.name} />
+          <h1>{testimonials.name}</h1>
+          <h2>{testimonials.testimony}</h2>
+          <img src={testimonials.image} alt={testimonials.name} />
           <button id="delete" onClick={removeTestimonial}>
             DELETE
           </button>
@@ -66,3 +63,4 @@ function Show(props) {
 }
 
 export default Show
+

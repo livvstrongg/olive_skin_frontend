@@ -18,14 +18,7 @@ function App() {
     <Route exact path='/products/:id' element={<Product />} /> 
     <Route exact path='/testimonials' element={<Testimonials />} /> 
     <Route exact path='/reviews' element={<Reviews />} />  
-    <Route
-                    path="/reviews/:id"
-                    render={(rp) => (
-                        <Show
-                        {...rp}
-                        />
-                    )}
-    />
+    <Route path="/testimonial/:_id" element={<Show />}/>
     </Routes>
     </>
   );

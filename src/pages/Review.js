@@ -32,13 +32,13 @@ function Review(props) {
       <>
       <div className='container my-5 col-md-3 mb-4 '>
         <div className='col-12 mb-5'>
-      <div class="card text-center" key={testimonial._id} >
-      <img class="card-img-top" src={testimonial.image} alt={testimonial.name} />
-      <div class="card-body">
+      <div className="card text-center" key={testimonial._id} >
+      <img className="card-img-top" src={testimonial.image} alt={testimonial.name} />
+      <div className="card-body">
         <Link to={`/testimonial/${testimonial._id}`}>
           <h1>{testimonial.name}</h1>
         </Link>
-              <p class="card-text lead fw-italic">
+              <p className="card-text lead fw-italic">
                 {testimonial.testimony}
               </p>
           </div>

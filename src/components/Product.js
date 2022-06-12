@@ -1,18 +1,12 @@
 import React, {useState, useEffect} from 'react';
-// import {useDispatch} from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
 function Product() {
-
 const {id} = useParams();
 const [product, setProduct] = useState([]);
 const [loading, setLoading] = useState(false);
 
-// const dispatch = useDispatch();
-// const addProduct = (product) => {
-//     dispatch(addCart(product));
-// }
 
 useEffect(() => {
     const getProduct = async () => {
