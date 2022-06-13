@@ -7,9 +7,9 @@ function Navbar() {
     <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
             <div className="container">
-            <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"/>
+            <img src="https://i.imgur.com/DxDZ1e7.png" alt="" width="30" height="30"/>
             <a className="navbar-brand a\fw-bold fs-4" href="#">
-            Olive Skin</a>
+               Olive Skin</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -25,12 +25,6 @@ function Navbar() {
                         <Link className="nav-link" to='/reviews'>Reviews</Link>
                     </li>
                 </ul>
-            <div className="buttons">
-                {/* <Link to='/cart' classNameName="btn btn-outline-dark ">
-                <i classNameName="fa fa-shopping-cart me-1 ms-2"></i>Cart
-                </Link> */}
-               
-            </div>
         </div>
     </div>
 </nav>

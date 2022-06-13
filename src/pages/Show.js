@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function Show(props) {
-    // console.log('show...', props)
   const navigate = useNavigate()
   const { id } = useParams()
   const testimonials = props.testimonial

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Review from "../pages/Review";
 import Show from "../pages/Show";
+import '../App.css'
+
 
 function Reviews(props) {
     const [testimonials, setTestimonials] = useState(null);

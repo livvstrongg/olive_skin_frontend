@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import '../App.css'
 
 function Review(props) {
   // state to hold formData
@@ -86,7 +85,7 @@ function Review(props) {
           class='form-control'
           aria-describedby="button-addon2"
           value={newForm.testimony}
-          name="title"
+          name="review"
           placeholder="title"
           onChange={handleChange}
         />
