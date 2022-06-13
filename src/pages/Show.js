@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function Show(props) {
+    // console.log('show...', props)
   const navigate = useNavigate()
   const { id } = useParams()
-  const testimonials = props.testimonials
+  const testimonials = props.testimonial
   const testimonial = testimonials.find(testimonials => testimonials._id === id)
-  console.log(id) 
+  
   
   const [editForm, setEditForm] = useState(testimonial)
 

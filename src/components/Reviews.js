@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import People from "../pages/Review";
+import Review from "../pages/Review";
 import Show from "../pages/Show";
 
 function Reviews(props) {
@@ -50,24 +50,28 @@ function Reviews(props) {
     }
 
     useEffect(() => getTestimonials(), []);
+    // console.log(testimonials)
 
     return (
         <main>
             <Routes>
                 <Route 
                     path='/' 
-                    element={<People 
+                    element={<Review
                         testimonials={testimonials} 
                         createTestimonials={createTestimonials} 
                     />} 
                 />
                 <Route
-                    path="/testimonials/:id"
-                    render={(rp) => (
-                        <Show
-                        {...rp}
-                        />
-                    )}
+                    path="/testimonials/:_id"
+                    element={<Show
+                        testimonials={testimonials}
+                        />}
+                    // render={(rp) => (
+                    //     <Show
+                    //     {...rp}
+                    //     />
+                    // )}
                 />
             </Routes>
         </main>

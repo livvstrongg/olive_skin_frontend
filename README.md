@@ -14,6 +14,31 @@ https://tranquil-begonia-e33eb9.netlify.app/
 ![Screen Shot 2022-06-12 at 2 37 22 PM](https://user-images.githubusercontent.com/101207297/173250358-0cef8333-cd3a-4f38-8e77-b0d394ef3ba2.png)
 ![Screen Shot 2022-06-12 at 2 37 26 PM](https://user-images.githubusercontent.com/101207297/173250359-d87547d3-a215-42de-bb9d-0e1b7f91378d.png)
 
+# Requirements
+
+-Uses a MongoDB
+-Full stack MERN application
+-Able to Read products and reviews and Create reviews (CRUD)
+-Deployed to Netlify
+
 # MVP
 
+-Browse different products
+-View the product show page
+-Browse reviews
+-Create own review
+
 # Stretch Goals
+
+-Add cart function
+-User Authentication
+-Edit and delete review
+
+# Thank You's
+
+-Thank you to Jesse Broxton for helping me with my backend
+-Thank you to all my friends for being there to talk to and work through issues
+
+# Database Link
+
+https://olive-skin.herokuapp.com/

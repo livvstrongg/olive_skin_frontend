@@ -26,6 +26,7 @@ function Review(props) {
     })
   }
 
+
   // loaded function
   const loaded = () => {
     return props.testimonials.map(testimonial => (
