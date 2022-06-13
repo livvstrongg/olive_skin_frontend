@@ -7,6 +7,7 @@ function Navbar() {
     <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
             <div className="container">
+            <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"/>
             <a className="navbar-brand a\fw-bold fs-4" href="#">
             Olive Skin</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
